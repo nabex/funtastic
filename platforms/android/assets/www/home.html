@@ -1,0 +1,37 @@
+<!-- home.html -->
+<div id="HomeContent">
+
+  <div class="card">
+    <div class="card-image" onclick="getPhotoDATA();"><img id="camera_pic" class="activator" src="img/img.jpg"></div>
+    <!--
+    <div class="card-content">
+      <span class="card-title activator text-col center">saturn.jpg</span>
+      <a id="savePhoto" onclick="savePhoto();" class="right mt10" href="#"><i class="fa fa-fw fa-2x fa-download fa-cyan"></i></a>
+    </div>
+  -->
+  </div>
+
+
+  <div class="card blue-grey darken-1 center" onClick="PageControll(3);">
+    <div class="card-content white-text">
+      <span class="card-title" id="recentScheduleDate">10/20, 20:00</span>
+      <p id="recentScheduleNote">I am a very simple card. I am good at containing small bits of information.</p>
+    </div>
+    <div class="card-action">
+      <a href="#" class="text-trans"><i class="fa fa-fw fa-list-ul fa-cyan mr10"></i>Check the schedule</a>
+    </div>
+  </div>
+
+  <div id="cameraBtn" class="center" style="margin-top: 30px;">
+    <a onclick="getCameraBase64();" class="btn-circle"><i class="fa fa-fw fa-camera fa-cyan"></i></a>
+  </div>
+
+<!--
+  <input type="file" id="file_01" class="file">
+  <label class="file_mask">
+    <a class="btn-floating btn-large l-white"><i class="fa fa-fw fa-file fa-cyan"></i></a>
+    <input type="text" id="mask_file_01">
+  </label>
+  <div id="fileName"></div>
+-->
+</div><!-- #HomeContent -->

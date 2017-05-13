@@ -1,0 +1,17 @@
+@charset "UTF-8";
+#DeviceSelect li{
+  font-size: 16px;
+color: #26a69a;
+display: block;
+line-height: 22px;
+padding: 14px 16px;
+}
+
+.mt{
+  margin-top: 20px;
+}
+
+#DeviceSelectContent
+*, *:before, *:after {
+  box-sizing: content-box;
+}

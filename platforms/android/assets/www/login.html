@@ -1,0 +1,36 @@
+<!-- login.html -->
+<div id="loginContent">
+
+  <div class="logo center">
+    <img src="img/logo.png">
+    <p class="catchCopy">Sharing Datas Shares Your Heart.</p>
+  </div>
+
+  <div class="inputArea">
+    <form>
+      <div class="input-field">
+        <i class="fa fa-fw fa-cyan fa-user prefix"></i>
+        <input id="loginId" type="text" class="validate">
+        <label for="id">User ID</label>
+      </div>
+      <div class="input-field">
+        <i class="fa fa-fw fa-cyan fa-unlock-alt prefix"></i>
+        <input id="loginPass" class="validate" type="password">
+        <label for="pass">Password</label>
+      </div>
+    </form>
+  </div>
+  <div class="loginBtnArea center">
+    <!--
+    <a class="btn cyan loginBtn" onClick="PageControll(0)">Login</a>
+  -->
+    <a class="btn cyan loginBtn text-trans" onClick="requestLogin();">Login</a>
+  </div>
+
+  <div class="createAccountBtnArea">
+    <p onClick="PageControll(7)">
+      <input class="with-gap cyan" name="group3" type="radio" id="test5" checked />
+      <label for="test5">Create an Account</label>
+    </p>
+  </div>
+</div><!-- #loginContent -->

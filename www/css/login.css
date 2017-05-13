@@ -1,0 +1,79 @@
+
+#loginContent{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #fff;
+  z-index: 3;
+}
+
+.logo img{
+  margin-top: 80px;
+  margin-bottom: 20px;
+  width: 40%;
+}
+
+.loginBtn{
+  margin-top: 20px;
+  width: 75%;
+}
+
+.inputArea{
+  margin-left: 20px;
+  width: 80%;
+}
+
+.catchCopy{
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.createAccountBtnArea{
+  margin-top: 20px;
+  margin-left: 12%;
+}
+
+.logoutBtnArea{
+  margin-top: -20px;
+  margin-left: 3%;
+}
+
+#loginContent
+[type="radio"]:checked+label:after,
+[type="radio"].with-gap:checked+label:before,
+[type="radio"].with-gap:checked+label:after {
+    border: 2px solid #00bcd4;
+}
+
+#loginContent
+[type="radio"]:checked+label:after,
+[type="radio"].with-gap:checked+label:before,
+[type="radio"].with-gap:checked+label:after {
+    border: 2px solid #00bcd4;
+}
+
+#loginContent
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly])
+{
+  border-bottom: 1px solid #00bcd4;
+  box-shadow: 0 1px 0 0 #00bcd4;
+}
+
+#loginContent
+input[type=text]:focus:not([readonly])+label,
+input[type=password]:focus:not([readonly])+label
+{
+  color: #00bcd4;
+}
+
+#loginContent
+input[type=text].valid,
+input[type=password].valid
+{
+  border-bottom: 1px solid #00bcd4;
+  box-shadow: 0 1px 0 0 #00bcd4;;
+}

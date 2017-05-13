@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+
+
+  <!--
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+-->
+
+<!-- Good default declaration:
+* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+* Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+* Enable inline JS: add 'unsafe-inline' to default-src
+* Enable eval(): add 'unsafe-eval' to default-src
+* Create your own at http://cspisawesome.com
+-->
+<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+<link rel="stylesheet" type="text/css" href="lib/materialize/css/materialize.min.css"  media="screen,projection" />
+<link rel="stylesheet" type="text/css" href="css/font_awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+<link rel="stylesheet" type="text/css" href="css/loader.css" />
+<link rel="stylesheet" type="text/css" href="css/page1.css" />
+<link rel="stylesheet" type="text/css" href="css/page2.css" />
+<link rel="stylesheet" type="text/css" href="css/scheduleList.css" />
+<link rel="stylesheet" type="text/css" href="css/login.css" />
+<link rel="stylesheet" type="text/css" href="css/input.css" />
+
+
+<script type="text/javascript" src="lib/jquery/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="lib/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="lib/materialize/js/materialize.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="https://motion-share.herokuapp.com/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/page1.js"></script>
+<script type="text/javascript" src="js/pageControl.js"></script>
+<script type="text/javascript" src="js/loading.js"></script>
+<script type="text/javascript"> app.initialize(); </script>
+<script type="text/javascript" src="js/geolocation.js"></script>
+<script type="text/javascript" src="js/connectServer.js"></script>
+<script type="text/javascript" src="js/shake.js"></script>
+<script type="text/javascript" src="js/motion.js"></script>
+<script type="text/javascript" src="js/camera.js"></script>
+<script type="text/javascript" src="js/schedule.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript" src="js/modeChange.js"></script>
+<script type="text/javascript" src="js/userSetting.js"></script>
+<script type="text/javascript" src="js/saveBase64PhotoData.js"></script>
+<script type="text/javascript" src="js/tapPosition.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/friend.js"></script>
+
+
+
+<script>
+//alert(navigator.userAgent);
+</script>
+
+<title>MS-HTML5</title>
+</head>
+
+<body>
+  <div class="app">
+
+
+    <div id="loader-bg">
+      <div id="loader">
+        <div class="row">
+          <div class="col s12"><img src="img/logo.png" width="60%"/></div>
+          <div class="col s12" style="font-size: 12px"><p>Sharing Datas Shares Your Heart</p></div>
+            <div class="col s12"><div class="loader">Loading...</div></div>
+            <div class="info"></div>
+            <div class="info2"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="wrap">
+        <nav class="grey lighten-5">
+          <a href="#" class="brand-logo center cyan-text text-trans">Home</a>
+          <a href="#" class="right black-text" id="modeStatus" onclick="modeChange()"></a>
+          <ul id="slide-out" class="side-nav blue-grey darken-4" style="margin-top: -20px;">
+            <div class="userView bottom-line">
+              <div><a href="#!name"><span class="info-mt">your infomation</span></a></div>
+              <a href="#!name" style="margin-top: -10px"><span id="userNameM" class="name">watanabe takagawa</span></a>
+              <a href="#!tel" style="margin-top: -20px"><span id="userPhoneM" class="tel sideFont">000-0000-0000</span></a>
+              <a href="#!email"><span id="userMailM" class="email sideFont">mirai@fun.ac.jp</span></a>
+            </div>
+            <li id="link"><a class="animsition-link" onClick="PageControll(0)" href="#">Home</a></li>
+            <li id="link"><a class="animsition-link" onClick="PageControll(3)" href="#">Schedule</a></li>
+            <li id="link"><a class="animsition-link" onClick="PageControll(4)" href="#">User Information</a></li>
+            <li id="link"><a class="animsition-link" onClick="PageControll(5)" href="#">Making Motion</a></li>
+            <li id="link"><a class="animsition-link" onClick="PageControll(8)" href="#">Friend List</a></li>
+            <li id="setting" class="dropdown-button" data-activates="dropdown2" href="#">Setting</li>
+              <ul id='dropdown2' class='dropdown-content settingMenu'>
+                <li id="link"><a class="animsition-link" onClick="PageControll(1)" href="#">Select Sensing Device</a></li>
+                <li id="link"><a class="animsition-link" onClick="PageControll(2)" href="#">Motion Debag</a></li>
+                <li id="link"><a class="animsition-link" onClick="PageControll(6)" href="#">Public Range</a></li>
+              </ul>
+            </li>
+
+            <div class="switch ml10">
+              <label>Send Mode<input type="checkbox" name="modeChangeBtn" onclick="modeChange();"><span class="lever"></label>
+              </div>
+              <div class="switch ml10" style="margin-top: -20px">
+                <label>PPAP<input type="checkbox" name="" onclick="ppap();"><span class="lever"></label>
+                </div>
+              <div class="logoutBtnArea" style="margin-top: -20px">
+                <p>
+                  <input class="with-gap cyan animsition-link" name="group3" type="radio" id="test5" checked />
+                  <label for="test5" onClick="logout();">Logout</label>
+                </p>
+              </div>
+
+            </ul>
+            <a id="menubar" href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-fw fa-cyan fa-bars"></i></a>
+            <a id="menubar-back" href="#" style="display:none;" class="cyan-text"><i class="fa fa-fw fa-cyan fa-chevron-left"></i>Back</a>
+          </nav>
+
+          <div class="container" style="margin-top:30px;">
+            <div id="view"></div>
+
+            <!--
+            <div id="fab" onclick="fabCon();" class="fixed-action-btn">
+              <a class="btn-floating btn-large l-white"><i class="fa fa-fw fa-cyan fa-bars"></i></a>
+              <ul>
+                <li><a class="btn-floating l-white animsition-link" onClick="PageControll(0)"><i class="fa fa-fw fa-cyan fa-home"></i></a></li>
+                <li><a class="btn-floating l-white animsition-link" onClick="PageControll(1)"><i class="fa fa-fw fa-cyan fa-tablet"></i></a></li>
+                <li><a class="btn-floating l-white animsition-link" onClick="PageControll(3)"><i class="fa fa-fw fa-cyan fa-calendar-o"></i></a></li>
+                <li><a class="btn-floating l-white animsition-link" onClick="PageControll(4)"><i class="fa fa-fw fa-cyan fa-user"></i></a></li>
+                <li><a class="btn-floating l-white animsition-link" onClick="PageControll(5)"><i class="fa fa-fw fa-cyan fa-plus-circle"></i></a></li>
+              </ul>
+            </div>
+
+          <div id="fab" onclick="fabCon();" class="fixed-action-btn">
+            <a class="btn-floating btn-large l-white animsition-link" onClick="PageControll(0)"><i class="fa fa-fw fa-cyan fa-home"></i></a>
+          </div>
+          -->
+
+          </div>
+        </div><!-- /#wrap -->
+      </div><!-- /.app -->
+
+
+      <script>
+      $('.button-collapse').sideNav({
+        menuWidth: 210, // Default is 240
+        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      });
+
+
+      $("#menubar-back").click(function(){
+        if(menuValue==0){
+          PageControll(0);
+        }else if(menuValue==2){
+          scheduleList();
+        }
+      });
+
+
+      </script>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script>
+      getLoginPage(openLoginPage);
+      audioInitialize();
+      showUserMenu();
+      bluetoothFanc.onDeviceReady();
+      setPhotoDATA();
+      modeChange();
+      getGeoStart();
+      </script>
+    </body>
+    </html>

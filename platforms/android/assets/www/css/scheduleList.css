@@ -1,0 +1,56 @@
+.halfButton{
+  width:49%;
+}
+
+.list-Lists {
+  width:100%;
+  margin-top:0;
+  margin-left:0;
+  padding-left: 0em;
+  border-style:none;
+}
+.list-Lists li.list-li  {
+  border-left:7px solid #00bcd4;
+  text-align: left;
+  color: #000;
+  background: #fff;
+  margin-top:1em;
+  padding:1em;
+  padding-right:10%;
+}
+#createMotionList {
+  width:100%;
+  margin-top:0;
+  margin-left:0;
+  padding-left: 0em;
+  border-style:none;
+}
+#createMotionList li {
+  border-left:7px solid #00bcd4;
+  text-align: left;
+  color: #000;
+  background: #fff;
+  margin-top:1em;
+  padding:1em;
+  padding-right:10%;
+}
+
+.listTitle{
+  font-size: 1.5em;
+}
+.listAbout{
+  margin-top:5%;
+}
+
+.list-close{
+  font-size:20px;
+}
+.right-bottom{
+  position:fixed;
+  bottom: 5%;
+  right:5%;
+}
+
+.list-list{
+  margin-bottom:25%;
+}

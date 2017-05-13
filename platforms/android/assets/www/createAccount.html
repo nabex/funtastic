@@ -1,0 +1,37 @@
+<!-- createAccount.html -->
+<div id="createAccountContent" class="inputLay">
+  <div  style="width:80%">
+    <table class="center">
+      <tr>
+        <td><i class="fa fa-fw fa-user fa-2x fa-cyan prefix pb30"></i></td>
+        <td><input id="userName" type="text" placeholder="Name" required class="userName"></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-fw fa-book fa-2x fa-cyan prefix pb30"></i></td>
+        <td><input id="userId" type="text"  placeholder="Id" required></span></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-fw fa-phone fa-2x fa-cyan prefix pb30"></i></td>
+        <td><input id="userPhone" type="tel" pattern="\d{1,5}\d{1,4}\d{4,5}" title="not (-)" placeholder="Phone Number" class="userPhone inputLay"></span></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-fw fa-envelope-o fa-2x fa-cyan prefix pb30"></i></td>
+        <td><input id="userMail" type="email" placeholder="Mail" class="userMail inputLay"></span></td>
+      </tr>
+
+      <tr>
+        <td><i class="fa fa-fw fa-unlock-alt fa-2x fa-cyan prefix pb30"></i></td>
+        <td><input id="userPass" type="password" placeholder="Pass" inputLay></span></td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-fw fa-unlock-alt fa-2x fa-cyan prefix pb30"></i></td>
+        <td><input id="userPass2" type="password" placeholder="Pass Re-Enter" inputLay></span></td>
+      </tr>
+    </table>
+  </div>
+  <div class="center" style="width:85%;margin-left:auto;margin-right:auto;margin-top:-5%">
+    <a onClick="setAccountInfo();" href="#" class="btn-large btn-middle deviceBtn mt cyan text-trans" style="float:left">save</a>
+    <a onClick="searchUser()" href="#" class="btn-large btn-middle deviceBtn mt disable text-trans" style="float:right">search</a>
+  </div>
+</div>
+<!-- #createAccount -->
